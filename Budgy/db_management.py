@@ -14,7 +14,9 @@ def secrets() -> json:
     return secrets
 
 def generate_engine(hidden):
-    
+    """
+    Create url of sql server using secrets. Also creating the engine used for postgreSQL warehouse
+    """
     engine_url = f"postgresql://{hidden.get('NAME')}:{hidden.get('PASSWORD')}@localhost:5432/{hidden.get('NAME')}"
     engine_url = create_engine(engine_url)
     return engine_url

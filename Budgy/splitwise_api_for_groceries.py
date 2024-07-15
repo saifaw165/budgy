@@ -13,7 +13,7 @@ def secrets() -> json:
 
     return secrets
 
-def splitwise_get_expenses_api_call(api_key):
+def splitwise_get_expenses_api_call(api_key) -> json:
     API_KEY = api_key
 
     # Base URL for Splitwise API
@@ -58,7 +58,7 @@ def parse_json(json_obj):
         return json.loads(json_obj)
     return json_obj
 
-def source_groceries(table_info:pd.DataFrame, desired_columns: str):
+def source_groceries(table_info:pd.DataFrame, desired_columns: str) -> pd.DataFrame:
     """
     return parsed dataset to get columns 
     """
@@ -70,7 +70,7 @@ def source_groceries(table_info:pd.DataFrame, desired_columns: str):
 
     return groceries
 
-def normalize_dataset(datafile:pd.DataFrame, desired_columns:str): 
+def normalize_dataset(datafile:pd.DataFrame, desired_columns:str) -> pd.DataFrame: 
     """ 
     returns joined normalized data as this will be done for a number of columns
     """
@@ -86,7 +86,7 @@ def normalize_dataset(datafile:pd.DataFrame, desired_columns:str):
     
     return normalized_df
 
-def saif_stebondale_expenses(grocery_df:pd.DataFrame):
+def saif_stebondale_expenses(grocery_df:pd.DataFrame) -> pd.DataFrame:
     """
     filter columns to only relation to my personal expenses
     """
@@ -109,3 +109,28 @@ def saif_stebondale_expenses(grocery_df:pd.DataFrame):
     return grocery_df_saif
 
     
+def sourcing_saif_columns(pre_data:pd.DataFrame, column_index:int) -> pd.DataFrame:
+    """from concat user use this as additional movements in data to return relevant fields"""
+    
+    # create dictionary for mapping 
+    int_dict = {0:'zero',1:'one',2:'two',3:'three'}
+
+    # Check if any of the 'concat_user' strings start with 'Saif' after splitting by '_'
+    mask = pre_data['concat_user'].str.split('_').str[column_index] == 'Saif'
+
+    filtered_df = pre_data[mask]
+    
+    # return relevant fields
+    wanted_columns = filtered_df[['index','created_at',
+                                  'description','category',
+                                  'owed_share_'+int_dict[column_index],
+                                  'net_balance_'+int_dict[column_index]]]
+    
+    wanted_columns = wanted_columns.rename(columns={'owed_share_'+int_dict[column_index]:'owed_share',
+                                                    'net_balance_'+int_dict[column_index]:'net_balance'})
+    
+    wanted_columns = wanted_columns.drop(columns=['index'])
+    
+    wanted_columns = wanted_columns.reset_index()
+
+    return wanted_columns
