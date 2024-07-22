@@ -36,7 +36,7 @@ We can see that on average I am spending more than I am earning.
 
 <img width="1078" alt="image" src="https://github.com/user-attachments/assets/6f331233-4617-48f0-9da9-c381945b092e">
 
-Looking at the months where I spent below the root cause of this was a reduction in other category expenditure
+Looking at the months where I spent less than what I earn, the root cause of this was a reduction in `other` expenditure
 
 ![image](https://github.com/user-attachments/assets/b7fb7c67-3702-4cf0-aa8f-7fd447674fd4)
 
@@ -48,10 +48,10 @@ We can see that the majority of the time, I am spending more than I am earning. 
 
 ### *Biggest expenditure is my partner*
 
-Initial hypothesis was my partner was my main expense which is why I mapped a max budget of £600 against her. Looking at my mapped categories over time, I can see that my partner (Girlfriend_tax) is significantly under the amount. 
+Initial hypothesis was my partner was my main expense which is why I mapped a max budget of £600 against her. Looking at my mapped categories over time, I can see that my partner `Girlfriend_tax` is significantly under the amount. 
 <img width="1095" alt="image" src="https://github.com/user-attachments/assets/8958fcc9-e9df-4f25-acc6-3e3cdcb83d96">
 
-The main category that has been significantly sporadic are my groceries month over month alongside transport. A re-evaluation of my budgets should be considered to keep me consistent against my budget. 
+The main category that has been significantly sporadic are my `groceries` month over month alongside `transport`. A re-evaluation of my budgets should be considered to keep me consistent against my budget. 
 
 ### *How consistent are my additional income streams?*
 
@@ -63,7 +63,7 @@ From the time series chart we can see that there was a downward trend in the add
 
 ### *Summary*
 
-1. Looking at spend over time, we can see that other category is the main driver of spend
+1. Looking at spend over time, we can see that `other` is the main driver of spend
    - Looking into the description of what this entails the majority of this is food and luxury miscalaneaous expenditure
 2. Seeing the trend chart of account balance, we can see the positive months are when I increase my amount of additional income streams
 3. I have overestimated the amount of budget for my partner and underestimated the amount for groceries and trasnport
@@ -75,9 +75,9 @@ In order to improve spending behaviour a number of factors need to be done to ch
 - Reduce expenditure on luxury goods to have a postitive account balance
 - Increase the amount of additional income streams. This will allow to spend more and remain still at a positive balance
 - Re-map muy budget reducing the amount for budget
-  - Reduce girlfriend_tax to 350
-  - Increase groceries to 150
-  - Increase transport to 200
+  - Reduce `girlfriend_tax` to 350
+  - Increase `groceries` to 150
+  - Increase `transport` to 200
 
 
 
